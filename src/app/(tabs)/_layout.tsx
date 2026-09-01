@@ -1,5 +1,5 @@
 import { colors } from '@/styles/global';
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 
 export default function TabLayout() {
@@ -44,14 +44,19 @@ export default function TabLayout() {
       />
       <Tabs.Screen 
         name="profile" 
-        options={{ 
-            title: "Profile" 
-        }} 
+        options={{title: 'Profile',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name='tag-faces' size={size} color={color} />
+        ),
+      }}
       />
       <Tabs.Screen 
         name="shop" 
         options={{ 
-            title: "Shop" 
+            title: "Shop",
+            tabBarIcon: ({ color, size }) => (
+              <AntDesign name='shop' size={size} color={color} />
+          ),
         }} 
       />
     </Tabs>
